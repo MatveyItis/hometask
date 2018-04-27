@@ -10,6 +10,7 @@ import java.util.stream.Stream;
  * Created by Maletskov on 23.04.2018.
  */
 public class GenericRepository<T> {
+
     public String getAsCsvString(T t) throws InvalidEntityException {
         Field[] fields = t.getClass().getDeclaredFields();
         String[] values = new String[fields.length];

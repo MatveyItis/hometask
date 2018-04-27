@@ -1,7 +1,5 @@
 package ru.kpfu.itis.maletskov.hometask.downloadingimage;
 
-import jdk.nashorn.internal.parser.JSONParser;
-
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URI;
