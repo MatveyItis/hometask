@@ -21,7 +21,7 @@ public class CSVWriter {
     }
 
     public <T> void write2dArray(T[][] array) {
-        output = new File("C:\\Users\\User\\IdeaProjects\\hometask\\src\\ru\\kpfu\\itis\\maletskov\\hometask\\csv\\output.csv");
+        output = new File("/Users/matveymaletskov/IdeaProjects/oldwindows/src/ru/kpfu/itis/maletskov/hometask/csv/output.csv");
         try (DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(output)))) {
             for (int i = 0; i < array.length; i++) {
                 for (int j = 0; j < array[0].length; j++) {
@@ -66,13 +66,13 @@ public class CSVWriter {
             for (int i = 0; i < array.length;) {
                 for (int j = 0; j < sqrt1; j++) {
                     if (i < array.length) {
-                        if(j==sqrt1-1||i==array.length-1){
+                        if (j == sqrt1 - 1 || i == array.length - 1) {
                             dos.write(array[i]+"\n");
-                        }else{
+                        } else {
                             dos.write(array[i]+" "+delimiter);
                         }
                         i++;
-                    }else{
+                    } else {
                         break;
                     }
                 }

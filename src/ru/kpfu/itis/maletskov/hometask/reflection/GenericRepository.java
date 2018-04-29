@@ -16,7 +16,13 @@ public class GenericRepository<T> {
         String[] values = new String[fields.length];
         int i = 0;
         for (Field field : fields) {
-            String methodName = "get" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1);
+            StringBuilder sb = new StringBuilder();
+            sb.append("get");
+            sb.append(field.getName().substring(0, 1).toUpperCase());
+            if (field.getName().length() != 1) {
+                sb.append(field.getName().substring(1));
+            }
+            String methodName = sb.toString();
             try {
                 Method m = t.getClass().getMethod(methodName, new Class[]{});
                 try {
@@ -39,5 +45,9 @@ public class GenericRepository<T> {
             }
         }
         return Stream.of(values).collect(Collectors.joining(","));
+    }
+
+    public void read() {
+
     }
 }

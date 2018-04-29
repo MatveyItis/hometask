@@ -6,6 +6,7 @@ package ru.kpfu.itis.maletskov.hometask.reflection;
 public class Student {
     private String name;
     private int age;
+    private int n = 0;
 
     public Student(String name, int age) {
         this.name = name;
@@ -22,6 +23,10 @@ public class Student {
 
     public int getAge() {
         return age;
+    }
+
+    public int getN() {
+        return n;
     }
 
     @Override
