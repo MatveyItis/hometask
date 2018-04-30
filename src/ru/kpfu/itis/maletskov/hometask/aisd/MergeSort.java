@@ -14,7 +14,8 @@ public class MergeSort {
         int len = arr.length;
         if (len < 2) return arr;
         int middle = len / 2;
-        return merge(sortMerge(Arrays.copyOfRange(arr, 0, middle)),
+        return merge(
+                sortMerge(Arrays.copyOfRange(arr, 0, middle)),
                 sortMerge(Arrays.copyOfRange(arr, middle, len)));
     }
 

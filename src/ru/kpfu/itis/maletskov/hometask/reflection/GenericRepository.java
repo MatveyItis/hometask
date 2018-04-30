@@ -28,26 +28,32 @@ public class GenericRepository<T> {
                 try {
                     values[i] = m.invoke(t).toString();
                 } catch (IllegalAccessException e) {
-                    throw new InvalidEntityException("Entity class doesn't have get public method: " + methodName, e);
+                    throw new InvalidEntityException("The currently method doesn't have access to the definition of the specified method: " + methodName, e);
                 } catch (IllegalArgumentException e) {
-                    throw new InvalidEntityException("Entity class doesn't have get public method: " + methodName, e);
+                    throw new InvalidEntityException("The currently method has been passed an illegal or inappropriate argument.", e);
                 } catch (InvocationTargetException e) {}
                 i++;
             } catch (NoSuchMethodException e) {
                 try {
                     values[i] = field.get(t).toString();
-                } catch (IllegalArgumentException | IllegalAccessException ex) {
-                    throw new InvalidEntityException("Entity class doesn't have get public method: " + methodName, ex);
+                } catch (IllegalArgumentException ex1) {
+                    throw new InvalidEntityException("The method doesn't match the field name: " + methodName, ex1);
+                } catch (IllegalAccessException ex2) {
+                    throw new InvalidEntityException("Entity class doesn't have get private method: " + methodName, ex2);
                 }
-                throw new InvalidEntityException("Entity class doesn't have get method: " + methodName, e);
+                throw new InvalidEntityException("Method cannot be found: " + methodName, e);
             } catch (SecurityException e) {
-                throw new InvalidEntityException("Entity class doesn't have get public method: " + methodName, e);
+                throw new InvalidEntityException("The security manager has indicate a security violation in this method: " + methodName, e);
             }
         }
         return Stream.of(values).collect(Collectors.joining(","));
     }
 
     public void read() {
+
+    }
+
+    public void save(T t) {
 
     }
 }
