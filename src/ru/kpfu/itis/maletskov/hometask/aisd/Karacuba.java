@@ -47,7 +47,7 @@ public class Karacuba {
       if (x1.length != y1.length) {
          if (x1.length < y1.length) {
             System.arraycopy(x11,0, x1 = new boolean[y1.length], y11.length - x11.length, x11.length);
-         } else{
+         } else {
             System.arraycopy(y11,0, y1 = new boolean[x1.length], x11.length - y11.length, y11.length);
          }
       }
@@ -141,11 +141,11 @@ public class Karacuba {
       x2y1 = this.cut(x2y1);
       boolean[] x2y2 = this.multiply(this.xr, this.yr);
       x2y2 = this.cut(x2y2);
-      boolean[] baseAr = new boolean[(int)base * 2 + 1];
+      boolean[] baseAr = new boolean[base * 2 + 1];
       baseAr[0] = true;
       x1y1 = this.multiply(x1y1, baseAr);
       x1y1 = this.cut(x1y1);
-      baseAr = new boolean[(int)base + 1];
+      baseAr = new boolean[base + 1];
       baseAr[0] = true;
       x1y2 = this.summation(x1y2, x2y1);
       x1y2 = this.cut(this.multiply(this.cut(x1y2), baseAr)) ;

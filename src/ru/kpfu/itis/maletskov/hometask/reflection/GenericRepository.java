@@ -1,8 +1,11 @@
 package ru.kpfu.itis.maletskov.hometask.reflection;
 
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,6 +13,20 @@ import java.util.stream.Stream;
  * Created by Maletskov on 23.04.2018.
  */
 public class GenericRepository<T> {
+    private static int countOfRepo = 0;
+    private int currentRepo;
+    private File f;
+
+    public GenericRepository() throws IOException {
+        countOfRepo++;
+        this.currentRepo = countOfRepo;
+        this.f = new File("/Users/matveymaletskov/IdeaProjects/" +
+                "oldwindows/src/ru/kpfu/itis/maletskov/hometask/reflection/" + this.currentRepo + ".csv");
+        if (f.exists()) {
+           f.createNewFile();
+        }
+
+    }
 
     public String getAsCsvString(T t) throws InvalidEntityException {
         Field[] fields = t.getClass().getDeclaredFields();
@@ -49,11 +66,37 @@ public class GenericRepository<T> {
         return Stream.of(values).collect(Collectors.joining(","));
     }
 
-    public void read() {
+    public T read() {
+        /*try {
+            File f = new File("/Users/matveymaletskov/IdeaProjects/oldwindows/src/ru/kpfu/itis/maletskov/hometask/reflection/" + currentRepo + ".csv");
+            if (f.exists()) {
+               f.createNewFile();
+            }
+        } catch (IOException e) {
+           e.printStackTrace();
+        }*/
+        try (Scanner sc = new Scanner(this.f)) {
+            String s = sc.nextLine();
+            String[] arr = s.split(",");
+            T t;
+            return null;
+        } catch (FileNotFoundException e) {
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public void save(T t) {
-
+        try (FileWriter fw = new FileWriter(this.f, true)) {
+            fw.write(getAsCsvString(t) + "\n");
+            fw.flush();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidEntityException e) {
+            e.printStackTrace();
+        }
     }
 }

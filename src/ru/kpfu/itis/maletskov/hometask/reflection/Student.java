@@ -16,12 +16,16 @@ public class Student {
         this.name = name;
     }
 
-    //public String getName() {
-    //    return name;
-    //}
+    public String getName() {
+        return name;
+    }
 
     public int getAge() {
         return age;
+    }
+
+    public String toString() {
+        return name + " " + age;
     }
 
     @Override

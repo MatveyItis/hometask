@@ -4,7 +4,6 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -48,7 +47,7 @@ public class DownloaderSite {
       return m.matches();
    }
 
-   public static void download(URI uri) throws IOException {
+   public static void download(URI uri) {
       String name;
       if (countOfDownload == 0) {
          name = "site";
