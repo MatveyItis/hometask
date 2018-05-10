@@ -29,7 +29,6 @@
 <link href="catalog/view/javascript/promotionlabelpro/style.css" type="text/css" rel="stylesheet" media="screen" />
 <link href="catalog/view/theme/default/stylesheet/roboto-forced.min.css?v=2.5.1" type="text/css" rel="stylesheet" media="screen" />
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
-<link href="http://fermaeda.ru/" rel="canonical" />
 <script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 </head>
 <body class="common-home">
@@ -68,7 +67,7 @@
 						<input type="password" name="password" value="" placeholder="Введите пароль" id="input-password" class="form-control" />
 					</div>
 					<div class="form-group button-login text-right">
-					<a href="http://fermaeda.ru/forgot-password/">Забыли пароль?</a><button type="button" class="btn btn-primary loginaccount"  data-loading-text="Загрузка...">Войти</button>
+					<a href="http://fermaeda.ru/index.php?route=account/forgotten">Забыли пароль?</a><button type="button" class="btn btn-primary loginaccount"  data-loading-text="Загрузка...">Войти</button>
 					</div>
 				</div>
 			
@@ -100,7 +99,7 @@
 						<input type="text" name="telephone" value="" id="input-telephone"  placeholder="Ваш телефон" class="form-control" />
 					</div>
 					<div class="form-group button-login text-right">
-					<a href="http://fermaeda.ru/forgot-password/">Забыли пароль?</a><button type="button" class="btn btn-primary createaccount" data-loading-text="Загрузка..." >Отправить</button>	
+					<a href="http://fermaeda.ru/index.php?route=account/forgotten">Забыли пароль?</a><button type="button" class="btn btn-primary createaccount" data-loading-text="Загрузка..." >Отправить</button>	
 					</div>
 					
 				</div>
@@ -167,7 +166,7 @@ $('#quick-register .createaccount').click(function() {
 			}
 			
 			if (json['now_login']) {
-				$('.quick-login').before('<li class="dropdown"><a href="http://fermaeda.ru/my-account/" title="Личный кабинет" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">Личный кабинет</span> <span class="caret"></span></a><ul class="dropdown-menu dropdown-menu-right"><li><a href="http://fermaeda.ru/my-account/">Личный кабинет</a></li><li><a href="http://fermaeda.ru/order-history/">История заказов</a></li><li><a href="http://fermaeda.ru/transactions/">text_transaction</a></li><li><a href="http://fermaeda.ru/downloads/">text_download</a></li><li><a href="http://fermaeda.ru/logout/">text_logout</a></li></ul></li>');
+				$('.quick-login').before('<li class="dropdown"><a href="http://fermaeda.ru/index.php?route=account/account" title="Личный кабинет" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">Личный кабинет</span> <span class="caret"></span></a><ul class="dropdown-menu dropdown-menu-right"><li><a href="http://fermaeda.ru/index.php?route=account/account">Личный кабинет</a></li><li><a href="http://fermaeda.ru/index.php?route=account/order">История заказов</a></li><li><a href="http://fermaeda.ru/index.php?route=account/transaction">text_transaction</a></li><li><a href="http://fermaeda.ru/index.php?route=account/download">text_download</a></li><li><a href="http://fermaeda.ru/index.php?route=account/logout">text_logout</a></li></ul></li>');
 				
 				$('.quick-login').remove();
 			}
@@ -232,7 +231,7 @@ function loacation() {
 </div>
 <div class="container mobile_menu hidden-md visible-xs">
 <div class="menu_bar"><span class="m_menu"><i class="fa fa-bars" aria-hidden="true"></i> меню</span></div>
-<div class="logo-text"><a href="http://fermaeda.ru/"><img src="image/logo_m.png" title="Ферма Натуральные продукты" alt="Ферма Натуральные продукты" class="logo_m" /></a></div>
+<div class="logo-text"><a href="http://fermaeda.ru/index.php?route=common/home"><img src="image/logo_m.png" title="Ферма Натуральные продукты" alt="Ферма Натуральные продукты" class="logo_m" /></a></div>
 <div class="phone-right">
 <div class="login-phone"><a class="quick_signup" ><i class="fa fa-user" aria-hidden="true"></i></a></div>
 <div class="cart-phone"><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></div>
@@ -244,7 +243,7 @@ function loacation() {
 		О нас</a> </li>
 	
                                 <li>
-		<a href="index.php?route=blog/home"  data-target="link">
+		<a href="news"  data-target="link">
 		Новости</a> </li>
 	
                                 <li>
@@ -267,7 +266,7 @@ function loacation() {
     <div class="row">
       <div class="col-sm-3 hidden-xs">
         <div id="logo"> 
-              <a href="http://fermaeda.ru/"><img src="http://fermaeda.ru/image/catalog/logo.png" title="Ферма Натуральные продукты" alt="Ферма Натуральные продукты" class="img-responsive hidden-xs" />
+              <a href="http://fermaeda.ru/index.php?route=common/home"><img src="http://fermaeda.ru/image/catalog/logo.png" title="Ферма Натуральные продукты" alt="Ферма Натуральные продукты" class="img-responsive hidden-xs" />
 			  </a>
     
           
@@ -345,7 +344,7 @@ $(document).ready(function() {
 <div class="container">
 <nav class="clearfix" id="menu">
 <ul class="col-sm-3">
-<li class="catalog_menu hidden-xs"><span><a href="http://fermaeda.ru/">Каталог <i class="fa fa-bars"></i></a></span></li>
+<li class="catalog_menu hidden-xs"><span><a href="http://fermaeda.ru/index.php?route=common/home">Каталог <i class="fa fa-bars"></i></a></span></li>
 <li id="op_phone_m" class="catalog_menu hidden-md visible-xs"><span>Каталог <i class="fa fa-bars"></i></span></li>
 </ul>
 
@@ -357,7 +356,7 @@ $(document).ready(function() {
 		О нас</a> </li>
 	
                                 <li>
-		<a href="index.php?route=blog/home"  data-target="link">
+		<a href="news"  data-target="link">
 		Новости</a> </li>
 	
                                 <li>
@@ -377,19 +376,19 @@ $(document).ready(function() {
 
     <div class="category_phone">
       <ul class="nav navbar-nav">
-                <li><a href="http://fermaeda.ru/molochnaya-produkciya/">Молочная продукция, яйцо</a></li>
-                <li><a href="http://fermaeda.ru/ovoshi-i-zelen/">Птица, кролик</a></li>
-                <li><a href="http://fermaeda.ru/index.php?route=product/category&amp;path=81">Мясо</a></li>
-                <li><a href="http://fermaeda.ru/index.php?route=product/category&amp;path=82">Кулинария</a></li>
-                <li><a href="http://fermaeda.ru/syr/">Сыр</a></li>
-                <li><a href="http://fermaeda.ru/hleb/">Хлеб и выпечка</a></li>
-                <li><a href="http://fermaeda.ru/travyanoj-chaj/">Бакалея, чай</a></li>
-                <li><a href="http://fermaeda.ru/naturalnye-sladosti/">Натуральные сладости</a></li>
-                <li><a href="http://fermaeda.ru/med/">Мёд</a></li>
-                <li><a href="http://fermaeda.ru/index.php?route=product/category&amp;path=71">Овощи, зелень, ягоды</a></li>
-                <li><a href="http://fermaeda.ru/index.php?route=product/category&amp;path=73">Мясные деликатесы</a></li>
-                <li><a href="http://fermaeda.ru/index.php?route=product/category&amp;path=76">Домашние заготовки</a></li>
-                <li><a href="http://fermaeda.ru/fermerskie-nabory/">Фермерские наборы</a></li>
+                <li><a href="http://fermaeda.ru/molochnaya-produkciya">Молочная продукция, яйцо</a></li>
+                <li><a href="http://fermaeda.ru/ptica-krolik">Птица, кролик</a></li>
+                <li><a href="http://fermaeda.ru/mjaso">Мясо</a></li>
+                <li><a href="http://fermaeda.ru/kulinarija">Кулинария</a></li>
+                <li><a href="http://fermaeda.ru/syr">Сыр</a></li>
+                <li><a href="http://fermaeda.ru/hleb-i-vipechka">Хлеб и выпечка</a></li>
+                <li><a href="http://fermaeda.ru/travyanoj-chaj">Бакалея, чай</a></li>
+                <li><a href="http://fermaeda.ru/naturalnye-sladosti">Натуральные сладости</a></li>
+                <li><a href="http://fermaeda.ru/med">Мёд</a></li>
+                <li><a href="http://fermaeda.ru/ovoshhi-zelen-jagodi">Овощи, зелень, ягоды</a></li>
+                <li><a href="http://fermaeda.ru/mjasnie-delikatesi">Мясные деликатесы</a></li>
+                <li><a href="http://fermaeda.ru/domashnie-zagotovki">Домашние заготовки</a></li>
+                <li><a href="http://fermaeda.ru/fermerskie-nabory">Фермерские наборы</a></li>
               </ul>
     </div>
 </nav>
@@ -399,53 +398,53 @@ $(document).ready(function() {
   <div class="row"><aside id="column-left" class="col-sm-3 hidden-xs">
     <div class="category_menu">
     <div class="category-item">
-    <a href="http://fermaeda.ru/molochnaya-produkciya/" class="">Молочная продукция, яйцо</a>
+    <a href="http://fermaeda.ru/molochnaya-produkciya" class="">Молочная продукция, яйцо</a>
       <i class="fa fa-angle-right" aria-hidden="true"></i>
   <div class="sub-category">
-      <a href="http://fermaeda.ru/molochnaya-produkciya/iz-korovego-moloka/" class="">Из коровьего молока</a>
-        <a href="http://fermaeda.ru/molochnaya-produkciya/iz-kozego-moloka/" class="">Из козьего молока</a>
-        <a href="http://fermaeda.ru/index.php?route=product/category&amp;path=59_77" class="">Яйцо</a>
+      <a href="http://fermaeda.ru/molochnaya-produkciya/iz-korovego-moloka" class="">Из коровьего молока</a>
+        <a href="http://fermaeda.ru/molochnaya-produkciya/iz-kozego-moloka" class="">Из козьего молока</a>
+        <a href="http://fermaeda.ru/molochnaya-produkciya/jajco" class="">Яйцо</a>
       </div>
     </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/ovoshi-i-zelen/" class="">Птица, кролик</a>
+    <a href="http://fermaeda.ru/ptica-krolik" class="">Птица, кролик</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/index.php?route=product/category&amp;path=81" class="">Мясо</a>
+    <a href="http://fermaeda.ru/mjaso" class="">Мясо</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/index.php?route=product/category&amp;path=82" class="">Кулинария</a>
+    <a href="http://fermaeda.ru/kulinarija" class="">Кулинария</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/syr/" class="">Сыр</a>
+    <a href="http://fermaeda.ru/syr" class="">Сыр</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/hleb/" class="">Хлеб и выпечка</a>
+    <a href="http://fermaeda.ru/hleb-i-vipechka" class="">Хлеб и выпечка</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/travyanoj-chaj/" class="">Бакалея, чай</a>
+    <a href="http://fermaeda.ru/travyanoj-chaj" class="">Бакалея, чай</a>
       <i class="fa fa-angle-right" aria-hidden="true"></i>
   <div class="sub-category">
-      <a href="http://fermaeda.ru/index.php?route=product/category&amp;path=67_83" class="">Полезное питание</a>
+      <a href="http://fermaeda.ru/travyanoj-chaj/poleznoe-pitanie" class="">Полезное питание</a>
       </div>
     </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/naturalnye-sladosti/" class="">Натуральные сладости</a>
+    <a href="http://fermaeda.ru/naturalnye-sladosti" class="">Натуральные сладости</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/med/" class="">Мёд</a>
+    <a href="http://fermaeda.ru/med" class="">Мёд</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/index.php?route=product/category&amp;path=71" class="">Овощи, зелень, ягоды</a>
+    <a href="http://fermaeda.ru/ovoshhi-zelen-jagodi" class="">Овощи, зелень, ягоды</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/index.php?route=product/category&amp;path=73" class="">Мясные деликатесы</a>
+    <a href="http://fermaeda.ru/mjasnie-delikatesi" class="">Мясные деликатесы</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/index.php?route=product/category&amp;path=76" class="">Домашние заготовки</a>
+    <a href="http://fermaeda.ru/domashnie-zagotovki" class="">Домашние заготовки</a>
       </div>
     <div class="category-item">
-    <a href="http://fermaeda.ru/fermerskie-nabory/" class="">Фермерские наборы</a>
+    <a href="http://fermaeda.ru/fermerskie-nabory" class="">Фермерские наборы</a>
       </div>
   </div>  </aside>
             	
@@ -482,8 +481,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-thumb transition">
       
                 <div class="image">
-                                <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=67&amp;product_id=358"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/uzbagoiza-50-g-350h420pix-500x500-214x246.jpg" alt="Чай травяной Успокоительный" title="Чай травяной Успокоительный" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=67&amp;product_id=358">Чай травяной Успокоительный</a></div>
+                                <a href="http://fermaeda.ru/chaj-travyanoj-uspokoitelnyj"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/uzbagoiza-50-g-350h420pix-500x500-214x246.jpg" alt="Чай травяной Успокоительный" title="Чай травяной Успокоительный" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/chaj-travyanoj-uspokoitelnyj">Чай травяной Успокоительный</a></div>
 	  <div class="caption">   
                 <div class="price">
                     99 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /50г</span>                  </div>
@@ -496,8 +495,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-thumb transition">
       
                 <div class="image">
-                                <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=67&amp;product_id=357"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/kazan-50-g-350h420pix-500x500-214x246.jpg" alt="Чай травяной Вечерняя Казань" title="Чай травяной Вечерняя Казань" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=67&amp;product_id=357">Чай травяной Вечерняя Казань</a></div>
+                                <a href="http://fermaeda.ru/chaj-travyanoj-vechernyaya-kazan"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/kazan-50-g-350h420pix-500x500-214x246.jpg" alt="Чай травяной Вечерняя Казань" title="Чай травяной Вечерняя Казань" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/chaj-travyanoj-vechernyaya-kazan">Чай травяной Вечерняя Казань</a></div>
 	  <div class="caption">   
                 <div class="price">
                     99 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /50г</span>                  </div>
@@ -510,8 +509,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-thumb transition">
       
                 <div class="image">
-                                <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=67&amp;product_id=356"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/bodr-50-g-350h420pix-500x500-214x246.jpg" alt="Чай травяной Бодрость" title="Чай травяной Бодрость" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=67&amp;product_id=356">Чай травяной Бодрость</a></div>
+                                <a href="http://fermaeda.ru/chaj-travyanoj-bodrost"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/bodr-50-g-350h420pix-500x500-214x246.jpg" alt="Чай травяной Бодрость" title="Чай травяной Бодрость" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/chaj-travyanoj-bodrost">Чай травяной Бодрость</a></div>
 	  <div class="caption">   
                 <div class="price">
                     99 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /50г</span>                  </div>
@@ -524,8 +523,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-thumb transition">
       
                 <div class="image">
-                                <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=67&amp;product_id=355"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/vit-50-g-350h420pix-500x500-214x246.jpg" alt="Чай травяной Витаминный" title="Чай травяной Витаминный" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=67&amp;product_id=355">Чай травяной Витаминный</a></div>
+                                <a href="http://fermaeda.ru/chaj-travyanoj-vitaminnyj"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/vit-50-g-350h420pix-500x500-214x246.jpg" alt="Чай травяной Витаминный" title="Чай травяной Витаминный" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/chaj-travyanoj-vitaminnyj">Чай травяной Витаминный</a></div>
 	  <div class="caption">   
                 <div class="price">
                     99 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /50г</span>                  </div>
@@ -544,8 +543,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=88"><img src="http://fermaeda.ru/image/cache/catalog/photo/4/mol1-245x284.jpg" alt="Молоко коровье" title="Молоко коровье" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=88">Молоко коровье</a></div>
+	            	  <a href="http://fermaeda.ru/moloko-korove"><img src="http://fermaeda.ru/image/cache/catalog/photo/4/mol1-245x284.jpg" alt="Молоко коровье" title="Молоко коровье" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/moloko-korove">Молоко коровье</a></div>
 	  <div class="caption">   
                 <div class="price">
                     69 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /0,9л.</span>                  </div>
@@ -557,8 +556,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=268"><img src="http://fermaeda.ru/image/cache/catalog/tw2-245x284.jpg" alt="Творог 2%" title="Творог 2%" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=268">Творог 2%</a></div>
+	            	  <a href="http://fermaeda.ru/tvorog-2"><img src="http://fermaeda.ru/image/cache/catalog/tw2-245x284.jpg" alt="Творог 2%" title="Творог 2%" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/tvorog-2">Творог 2%</a></div>
 	  <div class="caption">   
                 <div class="price">
                     79 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /250г.</span>                  </div>
@@ -570,8 +569,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=294"><img src="http://fermaeda.ru/image/cache/catalog/tw1-245x284.jpg" alt="Творог деревенский 5%" title="Творог деревенский 5%" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=294">Творог деревенский 5%</a></div>
+	            	  <a href="http://fermaeda.ru/tvorog-derevenskij-5"><img src="http://fermaeda.ru/image/cache/catalog/tw1-245x284.jpg" alt="Творог деревенский 5%" title="Творог деревенский 5%" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/tvorog-derevenskij-5">Творог деревенский 5%</a></div>
 	  <div class="caption">   
                 <div class="price">
                     99 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /250г.</span>                  </div>
@@ -583,8 +582,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=293"><img src="http://fermaeda.ru/image/cache/catalog/photo/4/sm2-245x284.jpg" alt="Каймак деревенский" title="Каймак деревенский" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=293">Каймак деревенский</a></div>
+	            	  <a href="http://fermaeda.ru/kajmak-derevenskij"><img src="http://fermaeda.ru/image/cache/catalog/photo/4/sm2-245x284.jpg" alt="Каймак деревенский" title="Каймак деревенский" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/kajmak-derevenskij">Каймак деревенский</a></div>
 	  <div class="caption">   
                 <div class="price">
                     99 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /200г.</span>                  </div>
@@ -596,8 +595,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/molochnaya-produkciya/smetana-derevenskaya"><img src="http://fermaeda.ru/image/cache/catalog/photo/4/sm1-245x284.jpg" alt="Сметана деревенская" title="Сметана деревенская" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/molochnaya-produkciya/smetana-derevenskaya">Сметана деревенская</a></div>
+	            	  <a href="http://fermaeda.ru/smetana-derevenskaya"><img src="http://fermaeda.ru/image/cache/catalog/photo/4/sm1-245x284.jpg" alt="Сметана деревенская" title="Сметана деревенская" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/smetana-derevenskaya">Сметана деревенская</a></div>
 	  <div class="caption">   
                 <div class="price">
                     69 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /200г</span>                  </div>
@@ -609,8 +608,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=92"><img src="http://fermaeda.ru/image/cache/catalog/moloko/maslo_sliwochnoe_thumb-245x284.jpg" alt="Масло сливочное домашнее" title="Масло сливочное домашнее" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=92">Масло сливочное домашнее</a></div>
+	            	  <a href="http://fermaeda.ru/maslo-slivochnoe-domashnee"><img src="http://fermaeda.ru/image/cache/catalog/moloko/maslo_sliwochnoe_thumb-245x284.jpg" alt="Масло сливочное домашнее" title="Масло сливочное домашнее" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/maslo-slivochnoe-domashnee">Масло сливочное домашнее</a></div>
 	  <div class="caption">   
                 <div class="price">
                     198 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /300гр</span>                  </div>
@@ -622,11 +621,11 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/molochnaya-produkciya/moloko-koze"><img src="http://fermaeda.ru/image/cache/catalog/photo/4/ges-stories-virtuemart-product-moloko-koze_thumb-245x284.jpg" alt="Молоко козье" title="Молоко козье" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/molochnaya-produkciya/moloko-koze">Молоко козье</a></div>
+	            	  <a href="http://fermaeda.ru/moloko-koze"><img src="http://fermaeda.ru/image/cache/catalog/photo/4/ges-stories-virtuemart-product-moloko-koze_thumb-245x284.jpg" alt="Молоко козье" title="Молоко козье" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/moloko-koze">Молоко козье</a></div>
 	  <div class="caption">   
                 <div class="price">
-                    89 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /0,9л.</span>                  </div>
+                    159 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /0,9л.</span>                  </div>
         		<button class="add_cart" type="button" onclick="cart.add('164');">В корзину</button>
       </div> 
         
@@ -635,8 +634,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=86"><img src="http://fermaeda.ru/image/cache/catalog/moloko/molokotop-245x284.jpg" alt="Молоко топленое" title="Молоко топленое" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=59&amp;product_id=86">Молоко топленое</a></div>
+	            	  <a href="http://fermaeda.ru/moloko-toplenoe"><img src="http://fermaeda.ru/image/cache/catalog/moloko/molokotop-245x284.jpg" alt="Молоко топленое" title="Молоко топленое" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/moloko-toplenoe">Молоко топленое</a></div>
 	  <div class="caption">   
                 <div class="price">
                     59 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /0,5л</span>                  </div>
@@ -653,8 +652,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/syr/motsarella"><img src="http://fermaeda.ru/image/cache/catalog/photo/2/ges-stories-virtuemart-product-mocar-245x284.jpg" alt="Моцарелла" title="Моцарелла" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/syr/motsarella">Моцарелла</a></div>
+	            	  <a href="http://fermaeda.ru/motsarella"><img src="http://fermaeda.ru/image/cache/catalog/photo/2/ges-stories-virtuemart-product-mocar-245x284.jpg" alt="Моцарелла" title="Моцарелла" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/motsarella">Моцарелла</a></div>
 	  <div class="caption">   
                 <div class="price">
                     208 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /300 гр.</span>                  </div>
@@ -666,8 +665,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/syr/syr-adygejskij"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/ges-stories-virtuemart-product-adig-245x284.jpg" alt="Сыр Адыгейский" title="Сыр Адыгейский" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/syr/syr-adygejskij">Сыр Адыгейский</a></div>
+	            	  <a href="http://fermaeda.ru/syr-adygejskij"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/ges-stories-virtuemart-product-adig-245x284.jpg" alt="Сыр Адыгейский" title="Сыр Адыгейский" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/syr-adygejskij">Сыр Адыгейский</a></div>
 	  <div class="caption">   
                 <div class="price">
                     209 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /300гр</span>                  </div>
@@ -679,8 +678,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=313"><img src="http://fermaeda.ru/image/cache/catalog/asiago-245x284.jpg" alt="Асьяго" title="Асьяго" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=313">Асьяго</a></div>
+	            	  <a href="http://fermaeda.ru/asyago"><img src="http://fermaeda.ru/image/cache/catalog/asiago-245x284.jpg" alt="Асьяго" title="Асьяго" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/asyago">Асьяго</a></div>
 	  <div class="caption">   
                 <div class="price">
                     129 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /100 гр</span>                  </div>
@@ -692,8 +691,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=277"><img src="http://fermaeda.ru/image/cache/catalog/bp2-245x284.jpg" alt="Белпер Кноле" title="Белпер Кноле" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=277">Белпер Кноле</a></div>
+	            	  <a href="http://fermaeda.ru/belper-knole"><img src="http://fermaeda.ru/image/cache/catalog/bp2-245x284.jpg" alt="Белпер Кноле" title="Белпер Кноле" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/belper-knole">Белпер Кноле</a></div>
 	  <div class="caption">   
                 <div class="price">
                     259 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /100 гр</span>                  </div>
@@ -705,8 +704,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=280"><img src="http://fermaeda.ru/image/cache/catalog/moloko/img_2488-245x284.jpg" alt="Бри" title="Бри" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=280">Бри</a></div>
+	            	  <a href="http://fermaeda.ru/bri"><img src="http://fermaeda.ru/image/cache/catalog/moloko/img_2488-245x284.jpg" alt="Бри" title="Бри" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/bri">Бри</a></div>
 	  <div class="caption">   
                 <div class="price">
                     209 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /100 гр</span>                  </div>
@@ -718,8 +717,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=278"><img src="http://fermaeda.ru/image/cache/catalog/moloko/mramornyy-245x284.jpg" alt="Выдержанный в вине" title="Выдержанный в вине" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=278">Выдержанный в вине</a></div>
+	            	  <a href="http://fermaeda.ru/vyderzhannyj-v-vine"><img src="http://fermaeda.ru/image/cache/catalog/moloko/mramornyy-245x284.jpg" alt="Выдержанный в вине" title="Выдержанный в вине" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/vyderzhannyj-v-vine">Выдержанный в вине</a></div>
 	  <div class="caption">   
                 <div class="price">
                     195 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /100 гр</span>                  </div>
@@ -731,11 +730,11 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=312"><img src="http://fermaeda.ru/image/cache/catalog/gauda-245x284.jpg" alt="Гауда" title="Гауда" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=312">Гауда</a></div>
+	            	  <a href="http://fermaeda.ru/gauda"><img src="http://fermaeda.ru/image/cache/catalog/gauda-245x284.jpg" alt="Гауда" title="Гауда" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/gauda">Гауда</a></div>
 	  <div class="caption">   
                 <div class="price">
-                    179 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /100 гр</span>                  </div>
+                    159 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /100 гр</span>                  </div>
         		<button class="add_cart" type="button" onclick="cart.add('312');">В корзину</button>
       </div> 
         
@@ -744,8 +743,8 @@ $('#slideshow0').owlCarousel({
     <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-6">
     <div class="product-thumb transition">
       <div class="image">
-	            	  <a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=279"><img src="http://fermaeda.ru/image/cache/catalog/moloko/img_2488-245x284.jpg" alt="Камамбер" title="Камамбер" class="img-responsive" /></a></div>
-      <div class="pr_name"><a href="http://fermaeda.ru/index.php?route=product/product&amp;path=62&amp;product_id=279">Камамбер</a></div>
+	            	  <a href="http://fermaeda.ru/kamamber"><img src="http://fermaeda.ru/image/cache/catalog/moloko/img_2488-245x284.jpg" alt="Камамбер" title="Камамбер" class="img-responsive" /></a></div>
+      <div class="pr_name"><a href="http://fermaeda.ru/kamamber">Камамбер</a></div>
 	  <div class="caption">   
                 <div class="price">
                     209 <span class="sr-only">р</span><span class="roboto-forced ruble" aria-hidden="true" style="display:none;"></span><span class="itm"> /100 гр</span>                  </div>
@@ -760,19 +759,19 @@ $('#slideshow0').owlCarousel({
 	<div class="module-title">Новости</div>
 	<div class="news-list">
 		<div class="news-item">
-	<div class="image"><a href="http://fermaeda.ru/ferma/recept"><img src="http://fermaeda.ru/image/cache/catalog/moloko/megamenu/msrgr2tivoq-336x286.jpg" alt="Омлет Пуляр" title="Омлет Пуляр" /></a></div>
-	<div class="news-name"><a href="http://fermaeda.ru/ferma/recept">Омлет Пуляр</a></div>
+	<div class="image"><a href="http://fermaeda.ru/recept"><img src="http://fermaeda.ru/image/cache/catalog/moloko/megamenu/msrgr2tivoq-336x286.jpg" alt="Омлет Пуляр" title="Омлет Пуляр" /></a></div>
+	<div class="news-name"><a href="http://fermaeda.ru/recept">Омлет Пуляр</a></div>
 	<div class="news-descr">Кому нравиться пробовать что-то новое? Тот мы! Наткнулись на вкусный завтрак..</div>
 	</div>
 		<div class="news-item">
-	<div class="image"><a href="http://fermaeda.ru/ferma/shahlik2"><img src="http://fermaeda.ru/image/cache/catalog/blog-336x286.jpg" alt="Рецепты шашлыка" title="Рецепты шашлыка" /></a></div>
-	<div class="news-name"><a href="http://fermaeda.ru/ferma/shahlik2">Рецепты шашлыка</a></div>
+	<div class="image"><a href="http://fermaeda.ru/shahlik2"><img src="http://fermaeda.ru/image/cache/catalog/blog-336x286.jpg" alt="Рецепты шашлыка" title="Рецепты шашлыка" /></a></div>
+	<div class="news-name"><a href="http://fermaeda.ru/shahlik2">Рецепты шашлыка</a></div>
 	<div class="news-descr">Друзья, сегодня мы подготовили несколько нетривиальных рецептов маринада, которые могут прийтись по вкусу даже самым опытным шашлычникам.
 Друзья, сегодня мы подготовили несколько нетривиальных рецепт..</div>
 	</div>
 		<div class="news-item">
-	<div class="image"><a href="http://fermaeda.ru/ferma/shahlik"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/82sdvfuf-sa-336x286.jpg" alt="Немного о курином бульоне" title="Немного о курином бульоне" /></a></div>
-	<div class="news-name"><a href="http://fermaeda.ru/ferma/shahlik">Немного о курином бульоне</a></div>
+	<div class="image"><a href="http://fermaeda.ru/shahlik"><img src="http://fermaeda.ru/image/cache/catalog/photo/0/82sdvfuf-sa-336x286.jpg" alt="Немного о курином бульоне" title="Немного о курином бульоне" /></a></div>
+	<div class="news-name"><a href="http://fermaeda.ru/shahlik">Немного о курином бульоне</a></div>
 	<div class="news-descr">В любую погоду нет ничего лучше горячего ароматного куриного бульона..</div>
 	</div>
 	
@@ -804,22 +803,22 @@ $('#slideshow0').owlCarousel({
 		  <div class="col-sm-3 col-xs-6">
 			<h5>ИНФОРМАЦИЯ</h5>
 						<ul class="list-unstyled">
-								<li><a href="o-nas">Доставка и оплата</a></li>
-								<li><a href="/contact-us/">Контакты</a></li>
 								<li><a href="/proect">О нас</a></li>
 								<li><a href="/ferma/">Рецепты</a></li>
-								<li><a href="/index.php?route=blog/home">Новости</a></li>
+								<li><a href="news">Новости</a></li>
+								<li><a href="o-nas">Доставка и оплата</a></li>
+								<li><a href="/contact-us/">Контакты</a></li>
 							</ul>
 					  </div>
 		  
 		  <div class="col-sm-3 col-xs-6">
 			<h5>КАТАЛОГ</h5>
 						<ul class="list-unstyled">
-								<li><a href="/index.php?route=product/category&amp;path=71">Овощи</a></li>
-								<li><a href="/med/">Мёд</a></li>
-								<li><a href="/index.php?route=product/category&amp;path=73">Мясные деликатесы</a></li>
 								<li><a href="/molochnaya-produkciya/">Молочная продукция</a></li>
 								<li><a href="/fermerskie-nabory/">Фермерские наборы</a></li>
+								<li><a href="ovoshhi-zelen-jagodi">Овощи</a></li>
+								<li><a href="/med/">Мёд</a></li>
+								<li><a href="mjasnie-delikatesi">Мясные деликатесы</a></li>
 							</ul>
 					  </div>
 		      <div class="col-sm-2 social_f">

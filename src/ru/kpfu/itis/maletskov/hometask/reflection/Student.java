@@ -1,5 +1,7 @@
 package ru.kpfu.itis.maletskov.hometask.reflection;
 
+import java.io.Serializable;
+
 /**
  * Created by Maletskov on 23.04.2018.
  */

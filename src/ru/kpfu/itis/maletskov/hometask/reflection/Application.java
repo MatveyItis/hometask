@@ -16,7 +16,6 @@ public class Application {
          }
          System.out.println();
       }
-
       Method[] methods = c.getMethods();
       for (Method method : methods) {
          System.out.println("Имя: " + method.getName());
@@ -33,11 +32,12 @@ public class Application {
       GenericRepository<Student> gr1 = new GenericRepository<>();
       gr1.save(new Student("Danis", 18));
       gr1.save(new Student("Matvey", 19));
-      gr1.read();
+      System.out.println(gr1.read(new Student("Danis", 18)));
       GenericRepository<Product> gr2 = new GenericRepository<>();
-      gr2.save(new Product("dfsf", 12, 12, 23, 1999));
-      gr2.read();
+      gr2.save(new Product("Milk", 12));
+      System.out.println(gr2.read(new Product("sdf", 9)));
       GenericRepository<Product> gr3 = new GenericRepository<>();
+      gr3.save(new Product("Meat", 13));
 
    }
 }

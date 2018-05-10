@@ -1,9 +1,16 @@
 package ru.kpfu.itis.maletskov.hometask.downloadingsite;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,56 +20,61 @@ public class DownloaderSite {
    public static String baseUri = "http://fermaeda.ru/";
 
    public static void main(String[] args) throws URISyntaxException, IOException {
-      URI uri = new URI("http://fermaeda.ru/");
-      //System.out.println(getLines());
-      download(uri);
-      String[] arr = getAllHref(uri);
+      String site = "http://fermaeda.ru/";
+      download(site, 0);
+      String[] arr = getAllHref(new URI(site));
       for (String s : arr) {
-         download(new URI(s));
+         download(s, 0);
       }
    }
 
    public static String[] getAllHref(URI uri) {
-      try (Scanner sc = new Scanner(new File("/Users/matveymaletskov/" +
-              "IdeaProjects/oldwindows/src/ru/kpfu/itis/maletskov/hometask/downloadingsite/site.html"))) {
-         String s = sc.nextLine();
-         Pattern p = Pattern.compile("(href=\")[A-Za-z:.*\\/]+");
-         Matcher m = p.matcher(s);
-         StringBuilder sb = new StringBuilder();
-         while (m.find()) {
-            sb.append(getUri(m.group())).append(";;");
+      try {
+         Document doc = Jsoup.connect(String.valueOf(uri.toURL())).get();
+         Element body = doc.body();
+         String name = doc.title();
+
+         Elements urls = body.getElementsByTag("a");
+         List<String> arr = new ArrayList<>();
+         for(Element url : urls) {
+            //... и вытаскиваем их название...
+            if (!url.attr("href").isEmpty()) {
+               arr.add(url.attr("href"));
+            }
          }
-         String[] arr = sb.toString().split(";;");
-         sc.close();
-         return arr;
-      } catch (FileNotFoundException e) {
-         e.printStackTrace();
-      }
+         String[] array = new String[arr.size()];
+         for (int i = 0; i < arr.size(); i++) {
+            array[i] = getUri(arr.get(i));
+         }
+         return array;
+      } catch (IOException e) {}
       return null;
    }
 
-   public static boolean hasHref(String line) {
-      Pattern p = Pattern.compile("(href=\")[A-Za-z:.*\\/]+");
-      Matcher m = p.matcher(line);
-      return m.matches();
-   }
-
-   public static void download(URI uri) {
-      String name;
+   public static void download(String name, int n) throws IOException, URISyntaxException {
+      if (name == null) {
+         return;
+      }
+      URI uri = new URI(name);
       if (countOfDownload == 0) {
          name = "site";
       } else {
          name = "page" + countOfDownload;
       }
+      File file = new File("/Users/matveymaletskov/" +
+              "IdeaProjects/oldwindows/src/ru/kpfu/itis/maletskov/hometask/downloadingsite/" + name + ".html");
+      if (file.exists()) {
+         file.createNewFile();
+      }
       if (uri.isAbsolute()) {
          try (Scanner sc = new Scanner(uri.toURL().openConnection().getInputStream());
-              FileWriter out = new FileWriter(new File("/Users/matveymaletskov/" +
-                      "IdeaProjects/oldwindows/src/ru/kpfu/itis/maletskov/hometask/downloadingsite/" + name + ".html"))) {
+              FileWriter out = new FileWriter(file)) {
             String line = "";
             while (sc.hasNextLine()) {
                line = sc.nextLine();
                out.write(line + "\n");
             }
+            countOfDownload++;
             sc.close();
             out.close();
          } catch (MalformedURLException e) {
@@ -74,20 +86,20 @@ public class DownloaderSite {
    }
 
    public static String getUri(String line) {
-      if (!hasHref(line)) {
+      Pattern pattern = Pattern.compile("tel:[0-9]*");
+      Matcher m = pattern.matcher(line);
+      if (m.matches()) {
          return null;
       }
-      Pattern p = Pattern.compile("(href=\")[A-Za-z:.*\\/]+");
-      Matcher m = p.matcher(line);
-      String str = "";
-      while (m.find()) {
-         str = m.group();
+      if (line.charAt(0) == '#') {
+         return null;
       }
-      String[] arr = str.split("=\"");
-      if (arr[1].charAt(0) != 'h') {
-         return baseUri + arr[1];
+      if (line.charAt(0) == '/' || !(line.charAt(0) == 'h'
+       && line.charAt(1) == 't' && line.charAt(2) == 't'
+       && line.charAt(3) == 'p')) {
+         return baseUri + line;
       } else {
-         return arr[1];
+         return line;
       }
    }
 }
