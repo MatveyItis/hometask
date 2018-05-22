@@ -1,5 +1,7 @@
 package ru.kpfu.itis.maletskov.hometask.objectstreamexample;
 
+import ru.kpfu.itis.maletskov.hometask.reflection.Student;
+
 import java.io.*;
 import java.util.Arrays;
 
@@ -9,19 +11,8 @@ import java.util.Arrays;
 public class Main {
     private static final String DB_PATH = "C:/Users/User/IdeaProjects/hometask/src/ru/kpfu/itis/maletskov/hometask/controlsystemdb/db/students.txt";
 
-    public static void main(String[] args) {
-        try {
-            FileInputStream fin = new FileInputStream(new File(DB_PATH));
-            byte[] b = new byte[512];
-            fin.read(b);
-            for (int i = 0; i < b.length; i++) {
-                System.out.print((char)b[i]);
-            }
-            //System.out.println(ois.readChar());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) throws FileNotFoundException {
+        StudentOutputStream so = new StudentOutputStream(new DataOutputStream(new FileOutputStream(new File("1.csv"))));
+        so.write(new Student("Danis", 19));
     }
 }

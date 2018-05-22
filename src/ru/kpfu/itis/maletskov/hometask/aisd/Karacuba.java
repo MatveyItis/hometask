@@ -1,7 +1,6 @@
 package ru.kpfu.itis.maletskov.hometask.aisd;
 
 public class Karacuba {
-
    private boolean[] xl;
    private boolean[] xr;
    private boolean[] yl;
@@ -30,7 +29,7 @@ public class Karacuba {
          x /= 2;
       }
       for (int i = maxLen - 1; i >= 0; i--) {
-         if (i < maxLen / 2 ) {
+         if (i < maxLen / 2) {
             this.yl[i] = y % 2 == 1;
          } else {
             this.yr[i - maxLen / 2] = y % 2 == 1;
@@ -41,14 +40,14 @@ public class Karacuba {
       this.multiByKaracuba();
    }
 
-   public boolean[] multiply(boolean[] x1, boolean[] y1){
+   public boolean[] multiply(boolean[] x1, boolean[] y1) {
       boolean[] x11 = x1;
       boolean[] y11 = y1;
       if (x1.length != y1.length) {
          if (x1.length < y1.length) {
-            System.arraycopy(x11,0, x1 = new boolean[y1.length], y11.length - x11.length, x11.length);
+            System.arraycopy(x11, 0, x1 = new boolean[y1.length], y11.length - x11.length, x11.length);
          } else {
-            System.arraycopy(y11,0, y1 = new boolean[x1.length], x11.length - y11.length, y11.length);
+            System.arraycopy(y11, 0, y1 = new boolean[x1.length], x11.length - y11.length, y11.length);
          }
       }
       boolean[] sum = new boolean[y1.length + 1];
@@ -80,7 +79,7 @@ public class Karacuba {
       if (x1.length != y1.length) {
          if (x1.length < y1.length) {
             System.arraycopy(x11, 0, x1 = new boolean[y1.length], y11.length - x11.length, x11.length);
-         } else{
+         } else {
             System.arraycopy(y11, 0, y1 = new boolean[x1.length], x11.length - y11.length, y11.length);
          }
       }
@@ -137,7 +136,7 @@ public class Karacuba {
       x1y1 = this.cut(x1y1);
       boolean[] x1y2 = this.multiply(this.xl, this.yr);
       x1y2 = this.cut(x1y2);
-      boolean[] x2y1 = this.multiply(this.xr,this.yl);
+      boolean[] x2y1 = this.multiply(this.xr, this.yl);
       x2y1 = this.cut(x2y1);
       boolean[] x2y2 = this.multiply(this.xr, this.yr);
       x2y2 = this.cut(x2y2);
@@ -148,13 +147,13 @@ public class Karacuba {
       baseAr = new boolean[base + 1];
       baseAr[0] = true;
       x1y2 = this.summation(x1y2, x2y1);
-      x1y2 = this.cut(this.multiply(this.cut(x1y2), baseAr)) ;
+      x1y2 = this.cut(this.multiply(this.cut(x1y2), baseAr));
       x1y1 = this.cut(this.summation(x1y1, x1y2));
       x1y1 = this.cut(this.summation(x1y1, x2y2));
       int sum = 0;
       for (int i = 0; i < x1y1.length; i++) {
          if (x1y1[i]) {
-            sum +=(int) Math.pow(2, x1y1.length - i - 1);
+            sum += (int) Math.pow(2, x1y1.length - i - 1);
          }
       }
       System.out.println(sum);
